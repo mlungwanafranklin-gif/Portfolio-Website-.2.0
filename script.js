@@ -380,3 +380,20 @@ otherCheckbox.addEventListener("change", function () {
         otherField.style.display = "none";
     }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const otherCheckbox = document.getElementById("otherCheckbox");
+    const otherField = document.getElementById("otherServiceField");
+    const otherInput = document.getElementById("otherDetails");
+
+    function toggleOtherField() {
+        if (otherCheckbox.checked) {
+            otherField.style.display = "block";
+        } else {
+            otherField.style.display = "none";
+            otherInput.value = ""; // clears leftover text
+        }
+    }
+
+    otherCheckbox.addEventListener("change", toggleOtherField);
+});
