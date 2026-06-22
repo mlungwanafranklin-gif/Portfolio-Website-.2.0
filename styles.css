@@ -524,3 +524,37 @@ img { max-width: 100%; height: auto; display: block; }
     .projects-filter { gap: 0.5rem; }
     .filter-btn { padding: 0.5rem 1rem; font-size: 0.85rem; }
 }
+
+.testimonial-card {
+    display: none;
+    padding: 2.5rem;
+    background: var(--dark-light);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--dark-lighter);
+}
+.testimonial-card.active {
+    display: block;
+}
+.testimonial-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--dark-lighter);
+    cursor: pointer;
+    transition: var(--transition);
+}
+.dot.active {
+    background: var(--primary);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
