@@ -3,7 +3,7 @@ console.log("Script loaded successfully");
 // PARTICLE SYSTEM
 // ============================================
 const canvas = document.getElementById('particles');
-const ctx = canvas.getContext('2d');
+const ctx = canvas ? canvas.getContext('2d') : null;
 let particles = [];
 let animationId;
 
@@ -61,9 +61,15 @@ function drawParticles() {
 }
 
 function initParticles() {
+    if (!canvas || !ctx) return;
+
     resizeCanvas();
     createParticles();
-    if (animationId) cancelAnimationFrame(animationId);
+
+    if (animationId) {
+        cancelAnimationFrame(animationId);
+    }
+
     drawParticles();
 }
 
@@ -80,13 +86,17 @@ const body = document.body;
 const savedTheme = localStorage.getItem('theme');
 if (savedTheme) body.setAttribute('data-theme', savedTheme);
 
-themeToggle.addEventListener('click', () => {
-    const currentTheme = body.getAttribute('data-theme');
-    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-    body.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    initParticles();
-});
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = body.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+        body.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+
+        initParticles();
+    });
+}
 
 // ============================================
 // NAVIGATION
@@ -96,11 +106,12 @@ const navToggle = document.getElementById('navToggle');
 const navMenu = document.getElementById('navMenu');
 const navLinks = document.querySelectorAll('.nav-link');
 
-navToggle.addEventListener('click', () => {
-    navToggle.classList.toggle('active');
-    navMenu.classList.toggle('active');
-    document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
-});
+if (navToggle && navMenu) {
+    navToggle.addEventListener('click', () => {
+        navToggle.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+}
 
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
@@ -187,7 +198,9 @@ const statsObserver = new IntersectionObserver((entries) => {
         }
     });
 }, { threshold: 0.5 });
-statsObserver.observe(statsSection);
+if (statsSection) {
+    statsObserver.observe(statsSection);
+}
 
 // ============================================
 // SCROLL ANIMATIONS
@@ -246,26 +259,27 @@ backToTop.addEventListener('click', () => {
 // FORM HANDLING
 // ============================================
 const contactForm = document.getElementById('contactForm');
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const formData = new FormData(contactForm);
-    const data = Object.fromEntries(formData);
-    const btn = contactForm.querySelector('button[type="submit"]');
-    const originalText = btn.innerHTML;
-    btn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
-    btn.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
-    contactForm.reset();
-    setTimeout(() => {
-        btn.innerHTML = originalText;
-        btn.style.background = '';
-    }, 3000);
-    console.log('Form submitted:', data);
+
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(contactForm);
+        const data = Object.fromEntries(formData);
+
+        console.log(data);
+    });
+}
 });
 
 // ============================================
 // CURRENT YEAR
 // ============================================
-document.getElementById('year').textContent = new Date().getFullYear();
+const yearElement = document.getElementById('year');
+
+if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+}
 
 // ============================================
 // SMOOTH SCROLL
