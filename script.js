@@ -322,3 +322,31 @@ document.addEventListener('DOMContentLoaded', () => {
     typeEffect();
     initParticles();
 });
+
+// Testimonials Slider
+const testimonialCards = document.querySelectorAll('.testimonial-card');
+const prevBtn = document.querySelector('.testimonial-prev');
+const nextBtn = document.querySelector('.testimonial-next');
+const dots = document.querySelectorAll('.dot');
+let currentTestimonial = 0;
+
+function showTestimonial(index) {
+    testimonialCards.forEach((card, i) => {
+        card.classList.remove('active');
+        dots[i].classList.remove('active');
+    });
+    testimonialCards[index].classList.add('active');
+    dots[index].classList.add('active');
+}
+
+if (prevBtn && nextBtn) {
+    prevBtn.addEventListener('click', () => {
+        currentTestimonial = (currentTestimonial - 1 + testimonialCards.length) % testimonialCards.length;
+        showTestimonial(currentTestimonial);
+    });
+    
+    nextBtn.addEventListener('click', () => {
+        currentTestimonial = (currentTestimonial + 1) % testimonialCards.length;
+        showTestimonial(currentTestimonial);
+    });
+}
