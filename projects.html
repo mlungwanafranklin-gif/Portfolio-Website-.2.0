@@ -11,8 +11,43 @@
 <a href="contact.html">Contact</a>
 </nav>
 <main class="container">
-<h1>Projects</h1>
-<p>Move the corresponding content from your original single-page portfolio into this page.</p>
+<section id="projects" class="projects section">
+        <div class="container">
+            <div class="section-header"><span class="section-tag">Portfolio</span><h2 class="section-title">My Projects</h2><p class="section-subtitle">Some of my recent work</p></div>
+            <div class="projects-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="app">App</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card" data-category="web">
+                    <div class="project-image"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" alt="Portfolio"><div class="project-overlay"><a href="#" class="project-link" aria-label="View Live"><i class="fas fa-external-link-alt"></i></a><a href="https://github.com/mlungwanafranklin-gif/Portfolio-Website" class="project-link" aria-label="View Code"><i class="fab fa-github"></i></a></div></div>
+                    <div class="project-info"><h3>Personal Portfolio</h3><p>A clean and responsive portfolio website built with HTML and CSS.</p><div class="project-tags"><span>HTML5</span><span>CSS3</span><span>Responsive</span></div></div>
+                </div>
+                <div class="project-card" data-category="app">
+                    <div class="project-image"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop" alt="Dashboard"><div class="project-overlay"><a href="#" class="project-link" aria-label="View Live"><i class="fas fa-external-link-alt"></i></a><a href="#" class="project-link" aria-label="View Code"><i class="fab fa-github"></i></a></div></div>
+                    <div class="project-info"><h3>Analytics Dashboard</h3><p>A modern dashboard interface with data visualization components.</p><div class="project-tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div></div>
+                </div>
+                <div class="project-card" data-category="web">
+                    <div class="project-image"><img src="https://images.unsplash.com/photo-1555421689-d68471e189f2?w=600&h=400&fit=crop" alt="E-commerce"><div class="project-overlay"><a href="#" class="project-link" aria-label="View Live"><i class="fas fa-external-link-alt"></i></a><a href="#" class="project-link" aria-label="View Code"><i class="fab fa-github"></i></a></div></div>
+                    <div class="project-info"><h3>E-Commerce Landing</h3><p>A product landing page with modern design and smooth interactions.</p><div class="project-tags"><span>HTML5</span><span>CSS3</span><span>UI/UX</span></div></div>
+                </div>
+                <div class="project-card" data-category="design">
+                    <div class="project-image"><img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop" alt="Brand"><div class="project-overlay"><a href="#" class="project-link" aria-label="View Live"><i class="fas fa-external-link-alt"></i></a><a href="#" class="project-link" aria-label="View Code"><i class="fab fa-github"></i></a></div></div>
+                    <div class="project-info"><h3>Brand Identity System</h3><p>Complete brand identity design including logo, colors, and guidelines.</p><div class="project-tags"><span>Design</span><span>Branding</span><span>Figma</span></div></div>
+                </div>
+                <div class="project-card" data-category="app">
+                    <div class="project-image"><img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop" alt="Task Manager"><div class="project-overlay"><a href="#" class="project-link" aria-label="View Live"><i class="fas fa-external-link-alt"></i></a><a href="#" class="project-link" aria-label="View Code"><i class="fab fa-github"></i></a></div></div>
+                    <div class="project-info"><h3>Task Manager App</h3><p>A productivity app for managing daily tasks and projects efficiently.</p><div class="project-tags"><span>JavaScript</span><span>LocalStorage</span><span>UI/UX</span></div></div>
+                </div>
+                <div class="project-card" data-category="web">
+                    <div class="project-image"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop" alt="Weather"><div class="project-overlay"><a href="#" class="project-link" aria-label="View Live"><i class="fas fa-external-link-alt"></i></a><a href="#" class="project-link" aria-label="View Code"><i class="fab fa-github"></i></a></div></div>
+                    <div class="project-info"><h3>Weather App</h3><p>Real-time weather application with location-based forecasts.</p><div class="project-tags"><span>API</span><span>JavaScript</span><span>CSS3</span></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
 </main>
 <script src="script.js"></script>
 </body></html>
