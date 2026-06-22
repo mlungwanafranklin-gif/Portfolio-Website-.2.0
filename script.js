@@ -369,3 +369,14 @@ window.addEventListener("click", function(e) {
         mapModal.style.display = "none";
     }
 });
+
+const otherCheckbox = document.getElementById("otherCheckbox");
+const otherField = document.getElementById("otherServiceField");
+
+otherCheckbox.addEventListener("change", function () {
+    if (this.checked) {
+        otherField.style.display = "block";
+    } else {
+        otherField.style.display = "none";
+    }
+});
