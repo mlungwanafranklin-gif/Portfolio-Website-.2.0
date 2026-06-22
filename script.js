@@ -350,3 +350,22 @@ if (prevBtn && nextBtn) {
         showTestimonial(currentTestimonial);
     });
 }
+
+const mapModal = document.getElementById("mapModal");
+const openMap = document.getElementById("openMap");
+const closeMap = document.getElementById("closeMap");
+
+openMap.addEventListener("click", function(e) {
+    e.preventDefault();
+    mapModal.style.display = "flex";
+});
+
+closeMap.addEventListener("click", function() {
+    mapModal.style.display = "none";
+});
+
+window.addEventListener("click", function(e) {
+    if (e.target === mapModal) {
+        mapModal.style.display = "none";
+    }
+});
