@@ -122,8 +122,13 @@ navLinks.forEach(link => {
 });
 
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) navbar.classList.add('scrolled');
-    else navbar.classList.remove('scrolled');
+    if (!navbar) return;
+
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
 });
 
 const sections = document.querySelectorAll('section[id]');
@@ -143,7 +148,7 @@ window.addEventListener('scroll', () => {
 // TYPING EFFECT
 // ============================================
 const dynamicText = document.getElementById('dynamicText');
-const words = ['Software Developer', 'Web Designer', 'UI/UX Enthusiast', 'Problem Solver'];
+const words = ['Software Developer', 'Web Designer', 'UI/UX Enthusiast', 'IT Technician'];
 let wordIndex = 0, charIndex = 0, isDeleting = false;
 
 function typeEffect() {
@@ -246,14 +251,24 @@ filterBtns.forEach(btn => {
 // BACK TO TOP
 // ============================================
 const backToTop = document.getElementById('backToTop');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 500) backToTop.classList.add('visible');
-    else backToTop.classList.remove('visible');
-});
+if (backToTop) {
 
-backToTop.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 500) {
+            backToTop.classList.add('visible');
+        } else {
+            backToTop.classList.remove('visible');
+        }
+    });
+
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+}
 
 // ============================================
 // FORM HANDLING
@@ -270,7 +285,6 @@ if (contactForm) {
         console.log(data);
     });
 }
-});
 
 // ============================================
 // CURRENT YEAR
