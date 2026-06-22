@@ -397,3 +397,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     otherCheckbox.addEventListener("change", toggleOtherField);
 });
+
+if (otherCheckbox.checked) {
+    otherField.classList.add("show");
+    otherField.style.display = "block";
+} else {
+    otherField.classList.remove("show");
+    setTimeout(() => {
+        otherField.style.display = "none";
+    }, 200);
+    otherInput.value = "";
+}
