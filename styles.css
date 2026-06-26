@@ -72,15 +72,36 @@ img { max-width: 100%; height: auto; display: block; }
     box-shadow: var(--shadow); padding: 0.75rem 0;
 }
 [data-theme="light"] .navbar.scrolled { background: rgba(248, 250, 252, 0.95); }
+
 .nav-container {
-    max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;
-    display: flex; justify-content: space-between; align-items: center;
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 1.5rem;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    position: relative;
 }
 .nav-logo {
-    font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--white);
+    font-family: var(--font-display); 
+    font-size: 1.5rem; 
+    font-weight: 700;
+    color: var(--white);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
-.logo-bracket { color: var(--primary); }
-.nav-right { display: flex; align-items: center; gap: 1rem; }
+}
+.logo-bracket { 
+   color: var(--primary); 
+}
+
+.nav-right { 
+   display: flex;  
+   align-items: center; 
+   gap: 1rem;
+   margin-left: auto;
+}
 
 .theme-toggle {
     width: 45px; height: 45px; border-radius: 50%; background: var(--dark-light);
@@ -525,6 +546,23 @@ img { max-width: 100%; height: auto; display: block; }
     .filter-btn { padding: 0.5rem 1rem; font-size: 0.85rem; }
 }
 
+@media (max-width: 768px) {
+    .hero-socials {
+        position: fixed;
+        left: 10px;
+        gap: 0.75rem;
+    }
+
+    .nav-logo {
+        position: static;
+        transform: none;
+    }
+
+    .nav-container {
+        justify-content: space-between;
+    }
+}
+
 .testimonial-card {
     display: none;
     padding: 2.5rem;
@@ -617,4 +655,24 @@ img { max-width: 100%; height: auto; display: block; }
 #otherServiceField.show {
     opacity: 1;
     transform: translateY(0);
+}
+
+.hero-socials {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    flex-direction: column;
+    display: flex;
+    gap: 1rem;
+    z-index: 9999;
+}
+
+.hero-socials .social-link {
+    transition: var(--transition);
+}
+
+.hero-socials .social-link:hover {
+    transform: translateX(6px);
+    color: var(--primary);
 }
