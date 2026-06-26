@@ -69,76 +69,78 @@
                     </div>
                 </div>
                 <div class="contact-form-wrapper">
-    <form class="contact-form" id="contactForm" action="https://formspree.io/f/xpqgzreb" method="POST">
+ <form class="contact-form" id="contactForm" action="https://formspree.io/f/xpqgzreb" method="POST">
 
-        <div class="form-row">
-            <div class="form-group">
-                <label for="name">Your Name</label>
-                <input type="text" id="name" name="name" required placeholder="John Doe">
-            </div>
-
-            <div class="form-group">
-                <label for="email">Your Email</label>
-                <input type="email" id="email" name="email" required placeholder="john@example.com">
-            </div>
-        </div>
-
-        <!-- SERVICES -->
+    <!-- NAME + EMAIL -->
+    <div class="form-row">
         <div class="form-group">
-            <label>Services Needed</label>
-
-            <label class="checkbox-item">
-                <input type="checkbox" name="service" value="web-design">
-                <span>Web Design</span>
-            </label>
-
-            <label class="checkbox-item">
-                <input type="checkbox" name="service" value="video-editing">
-                <span>Video Editing</span>
-            </label>
-
-            <label class="checkbox-item">
-                <input type="checkbox" name="service" value="consultation">
-                <span>Business Consultation</span>
-            </label>
-
-            <label class="checkbox-item">
-                <input type="checkbox" name="service" value="social-media">
-                <span>Social Media Management</span>
-            </label>
-
-            <label class="checkbox-item">
-                <input type="checkbox" id="otherCheckbox" name="service" value="other">
-                <span>Other</span>
-            </label>
-
-            <!-- hidden extra input -->
-            <div class="form-group" id="otherServiceField" style="display:none; margin-top:10px;">
-                <label for="otherDetails">Please specify</label>
-                <input 
-                    type="text" 
-                    id="otherDetails" 
-                    name="otherDetails" 
-                    placeholder="Describe the service you need..."
-                >
-            </div>
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required placeholder="John Doe">
         </div>
 
-        <!-- MESSAGE -->
         <div class="form-group">
-            <label for="message">Your Message</label>
-            <textarea id="message" name="message" rows="5" required placeholder="Tell me about your project..."></textarea>
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" required placeholder="john@example.com">
         </div>
+    </div>
 
-        <!-- SUBMIT -->
-        <button type="submit" class="btn btn-primary btn-full">
-            <i class="fas fa-paper-plane"></i> Send Message
-        </button>
+    <!-- SERVICES -->
+    <div class="form-group">
+        <label>Services Needed</label>
 
-        <input type="hidden" name="_subject" value="New Portfolio Message">
-        <input type="hidden" name="_captcha" value="false">
+        <label class="checkbox-item">
+            <input type="checkbox" name="service[]" value="video-editing">
+            <span>Video Editing</span>
+        </label>
 
-    </form>
+        <label class="checkbox-item">
+            <input type="checkbox" name="service[]" value="web-development">
+            <span>Web Development</span>
+        </label>
+
+        <label class="checkbox-item">
+            <input type="checkbox" name="service[]" value="web-management">
+            <span>Web Management</span>
+        </label>
+
+        <label class="checkbox-item">
+            <input type="checkbox" name="service[]" value="social-media-marketing">
+            <span>Social Media Marketing</span>
+        </label>
+
+        <label class="checkbox-item">
+            <input type="checkbox" id="otherCheckbox" name="service[]" value="other">
+            <span>Other</span>
+        </label>
+
+        <!-- OTHER INPUT -->
+        <div class="form-group" id="otherServiceField" style="display:none; margin-top:10px;">
+            <label for="otherDetails">Please specify</label>
+            <input 
+                type="text" 
+                id="otherDetails" 
+                name="otherDetails"
+                placeholder="Describe the service you need..."
+            >
+        </div>
+    </div>
+
+    <!-- MESSAGE -->
+    <div class="form-group">
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" rows="5" required placeholder="Tell me about your project..."></textarea>
+    </div>
+
+    <!-- SUBMIT -->
+    <button type="submit" class="btn btn-primary btn-full">
+        <i class="fas fa-paper-plane"></i> Send Message
+    </button>
+
+    <!-- FORMSPREE SETTINGS -->
+    <input type="hidden" name="_subject" value="New Portfolio Message">
+    <input type="hidden" name="_captcha" value="false">
+
+</form>
 </div>
             </div>
         </div>
