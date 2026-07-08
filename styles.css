@@ -14,8 +14,6 @@
     --gray: #94a3b8;
     --gray-light: #cbd5e1;
     --white: #ffffff;
-    --gradient-1: linear-gradient(135deg, #0d9488 0%, #06b6d4 50%, #0891b2 100%);
-    --gradient-2: linear-gradient(135deg, #06b6d4 0%, #0ea5e9 100%);
     --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
     --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
@@ -123,7 +121,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .nav-link::after {
     content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px;
-    background: var(--gradient-1); transition: var(--transition);
+    background: var(--primary); transition: var(--transition);
 }
 .nav-link:hover, .nav-link.active { color: var(--white); }
 .nav-link:hover::after, .nav-link.active::after { width: 100%; }
@@ -176,8 +174,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .text-outline { -webkit-text-stroke: 2px var(--primary); color: transparent; display: block; }
 .text-gradient {
-    background: var(--gradient-1); -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; background-clip: text; display: block;
+    color: var(--primary); display: block;
 }
 .hero-subtitle { font-size: 1.5rem; color: var(--gray); margin-bottom: 1.5rem; min-height: 2rem; }
 .dynamic-text { color: var(--primary-light); font-weight: 600; }
@@ -194,7 +191,7 @@ img { max-width: 100%; height: auto; display: block; }
     border: 2px solid transparent; cursor: pointer;
 }
 .btn-primary {
-    background: var(--gradient-1); color: var(--white);
+    background: var(--primary); color: var(--white);
     box-shadow: 0 4px 15px rgba(13, 148, 136, 0.4);
 }
 .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(13, 148, 136, 0.5); }
@@ -245,7 +242,7 @@ img { max-width: 100%; height: auto; display: block; }
 .hero-image { position: relative; display: flex; justify-content: center; }
 .hero-image-wrapper { position: relative; width: 350px; height: 350px; }
 .hero-image-bg {
-    position: absolute; inset: 0; background: var(--gradient-1);
+    position: absolute; inset: 0; background: var(--primary);
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
     animation: morph 8s ease-in-out infinite; opacity: 0.8;
 }
@@ -282,8 +279,7 @@ img { max-width: 100%; height: auto; display: block; }
 .stat-item { padding: 1.5rem; }
 .stat-number {
     font-family: var(--font-display); font-size: 3rem; font-weight: 700;
-    background: var(--gradient-1); -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; background-clip: text; line-height: 1;
+    color: var(--primary); line-height: 1;
 }
 .stat-suffix { font-family: var(--font-display); font-size: 2rem; font-weight: 700; color: var(--primary); }
 .stat-label { display: block; color: var(--gray); margin-top: 0.5rem; font-size: 0.95rem; }
@@ -298,8 +294,7 @@ img { max-width: 100%; height: auto; display: block; }
 .section-title {
     font-family: var(--font-display); font-size: 2.5rem; font-weight: 700;
     margin-bottom: 0.5rem;
-    background: linear-gradient(to right, var(--white), var(--gray));
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    color: var(--white);
 }
 .section-subtitle { color: var(--gray); font-size: 1.1rem; }
 
@@ -312,7 +307,7 @@ img { max-width: 100%; height: auto; display: block; }
     width: 100%; height: 500px; object-fit: cover;
 }
 .experience-badge {
-    position: absolute; bottom: -20px; right: -20px; background: var(--gradient-1);
+    position: absolute; bottom: -20px; right: -20px; background: var(--primary);
     padding: 1.5rem; border-radius: var(--radius); text-align: center;
     box-shadow: var(--shadow-xl); min-width: 140px;
 }
@@ -345,7 +340,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .skill-card::before {
     content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px;
-    background: var(--gradient-1); transform: scaleX(0); transition: var(--transition);
+    background: var(--primary); transform: scaleX(0); transition: var(--transition);
 }
 .skill-card:hover { transform: translateY(-5px); border-color: var(--primary); box-shadow: var(--shadow-lg); }
 .skill-card:hover::before { transform: scaleX(1); }
@@ -356,7 +351,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .skill-card h3 { font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 1rem; color: var(--white); }
 .skill-bar { height: 8px; background: var(--dark-light); border-radius: 10px; overflow: hidden; margin-bottom: 0.5rem; }
-.skill-progress { height: 100%; background: var(--gradient-1); border-radius: 10px; width: 0; transition: width 1.5s ease-out; }
+.skill-progress { height: 100%; background: var(--primary); border-radius: 10px; width: 0; transition: width 1.5s ease-out; }
 .skill-card.animate .skill-progress { width: var(--progress); }
 .skill-percent { font-size: 0.875rem; color: var(--gray); font-weight: 600; }
 
@@ -386,7 +381,7 @@ img { max-width: 100%; height: auto; display: block; }
     transition: var(--transition); font-family: inherit; font-size: 0.9rem;
 }
 .filter-btn:hover, .filter-btn.active {
-    background: var(--gradient-1); color: var(--white); border-color: transparent;
+    background: var(--primary); color: var(--white); border-color: transparent;
     box-shadow: 0 4px 15px rgba(13, 148, 136, 0.3);
 }
 .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
@@ -435,7 +430,7 @@ img { max-width: 100%; height: auto; display: block; }
 .blog-card:hover .blog-image img { transform: scale(1.1); }
 .blog-category {
     position: absolute; top: 1rem; left: 1rem; padding: 0.4rem 1rem;
-    background: var(--gradient-1); color: var(--white); border-radius: 50px;
+    background: var(--primary); color: var(--white); border-radius: 50px;
     font-size: 0.8rem; font-weight: 600;
 }
 .blog-content { padding: 1.5rem; }
@@ -500,7 +495,7 @@ img { max-width: 100%; height: auto; display: block; }
 /* BACK TO TOP */
 .back-to-top {
     position: fixed; bottom: 2rem; right: 2rem; width: 50px; height: 50px;
-    background: var(--gradient-1); border: none; border-radius: 50%;
+    background: var(--primary); border: none; border-radius: 50%;
     color: var(--white); font-size: 1.25rem; cursor: pointer;
     opacity: 0; visibility: hidden; transition: var(--transition);
     box-shadow: var(--shadow-lg); z-index: 999;
